@@ -1,4 +1,6 @@
 import streamlit as st
+import matplotlib.pyplot as plt
+import numpy as np
 
 def conta_virtual_screen():
     # Configuração da tela
@@ -22,7 +24,7 @@ def conta_virtual_screen():
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-bottom: 20px;  /* Espaço entre os cards */
+            margin-bottom: 20px;
         '>
             <div style='font-size: 40px;'>💵</div>
             <div style='font-size: 18px; font-weight: bold;'>Saldo Disponível</div>
@@ -44,7 +46,7 @@ def conta_virtual_screen():
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-bottom: 20px;  /* Espaço entre os cards */
+            margin-bottom: 20px;
         '>
             <div style='font-size: 40px;'>📈</div>
             <div style='font-size: 18px; font-weight: bold;'>Investimentos</div>
@@ -66,7 +68,7 @@ def conta_virtual_screen():
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-bottom: 20px;  /* Espaço entre os cards */
+            margin-bottom: 20px;
         '>
             <div style='font-size: 40px;'>🔄</div>
             <div style='font-size: 18px; font-weight: bold;'>Transferências</div>
@@ -88,7 +90,7 @@ def conta_virtual_screen():
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-bottom: 20px;  /* Espaço entre os cards */
+            margin-bottom: 20px;
         '>
             <div style='font-size: 40px;'>💳</div>
             <div style='font-size: 18px; font-weight: bold;'>Cartões</div>
@@ -96,6 +98,52 @@ def conta_virtual_screen():
         </div>
         """, unsafe_allow_html=True)
     
+    # Adicionando gráficos (dados fictícios)
+    st.markdown("---")
+    
+    # Gráfico de Investimentos ao longo do tempo (dados fictícios)
+    st.subheader("Evolução dos Investimentos")
+    x = np.arange(1, 13)
+    y = np.random.randint(500, 1500, size=12)
+    fig, ax = plt.subplots()
+    ax.plot(x, y, marker='o', color='purple')
+    ax.set_title("Investimentos Mensais")
+    ax.set_xlabel("Mês")
+    ax.set_ylabel("Valor (R$)")
+
+    # Tornando o fundo do gráfico transparente
+    fig.patch.set_facecolor('none')  # Fundo da figura transparente
+    ax.set_facecolor('none')  # Fundo do eixo transparente
+    st.pyplot(fig)
+
+    # Gráfico de Saldo de Conta (dados fictícios)
+    st.subheader("Saldo Mensal da Conta")
+    saldo = np.random.randint(5000, 10000, size=12)
+    fig2, ax2 = plt.subplots()
+    ax2.bar(x, saldo, color='green')
+    ax2.set_title("Saldo Mensal")
+    ax2.set_xlabel("Mês")
+    ax2.set_ylabel("Valor (R$)")
+
+    # Tornando o fundo do gráfico transparente
+    fig2.patch.set_facecolor('none')
+    ax2.set_facecolor('none')
+    st.pyplot(fig2)
+
+    # Gráfico de Transferências realizadas (dados fictícios)
+    st.subheader("Transferências Realizadas")
+    transferencias = np.random.randint(100, 500, size=12)
+    fig3, ax3 = plt.subplots()
+    ax3.bar(x, transferencias, color='blue')
+    ax3.set_title("Transferências por Mês")
+    ax3.set_xlabel("Mês")
+    ax3.set_ylabel("Valor (R$)")
+
+    # Tornando o fundo do gráfico transparente
+    fig3.patch.set_facecolor('none')
+    ax3.set_facecolor('none')
+    st.pyplot(fig3)
+
     # Conteúdo adicional (opcional)
     st.markdown("---")
     st.write("Mais informações da conta...")

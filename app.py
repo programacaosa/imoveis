@@ -9,8 +9,7 @@ def set_background_image():
         """
         <style>
         .stApp {
-            background-image: url("CADASTRO
-Clique no botão abaixo para acessar sua conta virtual:");
+            background-image: url("https://i.pinimg.com/736x/8f/75/60/8f75601ff2d00c7e51582f1032b250d5.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

@@ -153,7 +153,10 @@ with st.form("cadastro_form"):
             # Processamento do cadastro
             st.markdown("<p class='success-message'><i class='fas fa-check-circle' style='margin-right: 10px;'></i>Cadastro enviado com sucesso! Entraremos em contato em breve.</p>", unsafe_allow_html=True)
 
+    # Botão para redirecionar para a página de login
+    if st.button('Fazer Login'):
+        st.session_state.page = "login.py"
+        st.experimental_rerun()
+
 # Adicionando Font Awesome para os ícones
-st.markdown("""
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-""", unsafe_allow_html=True)
+st.markdown("""<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">""", unsafe_allow_html=True)

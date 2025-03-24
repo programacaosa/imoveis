@@ -93,7 +93,7 @@ def conta_virtual_screen():
             margin-bottom: 20px;
         '>
             <div style='font-size: 40px;'>💳</div>
-            <div style='font-size: 18px; font-weight: bold;'>Cartões</div>
+            <div style='font-size: 18px; font-weight: bold;'>Investimentos imóveis</div>
             <div style='font-size: 22px; margin-top: 10px;'>3 ativos</div>
         </div>
         """, unsafe_allow_html=True)

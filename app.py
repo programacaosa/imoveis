@@ -42,9 +42,8 @@ def main_screen():
         st.image("logo.png", width=200)
     
     st.title("📝 CADASTRO")
-    st.write("Clique no botão abaixo para acessar sua conta virtual:")
-    
-    if st.button("Acessar Conta Virtual", type="primary"):
+        
+    if st.button("Acessar Conta", type="primary"):
         st.session_state.show_conta_virtual = True
         st.rerun()
 

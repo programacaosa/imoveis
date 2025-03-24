@@ -9,7 +9,7 @@ def set_background_image():
         """
         <style>
         .stApp {
-            background-image: url("https://i.pinimg.com/736x/15/51/58/1551586f9cd85187f6bb3d09424f8abf.jpg");
+            background-image: url("https://i.pinimg.com/736x/b1/cb/d8/b1cbd8978b07f33079e6389d8f626c66.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

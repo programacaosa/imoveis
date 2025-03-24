@@ -22,6 +22,7 @@ def conta_virtual_screen():
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin-bottom: 20px;  /* Espaço entre os cards */
         '>
             <div style='font-size: 40px;'>💵</div>
             <div style='font-size: 18px; font-weight: bold;'>Saldo Disponível</div>
@@ -43,6 +44,7 @@ def conta_virtual_screen():
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin-bottom: 20px;  /* Espaço entre os cards */
         '>
             <div style='font-size: 40px;'>📈</div>
             <div style='font-size: 18px; font-weight: bold;'>Investimentos</div>
@@ -64,6 +66,7 @@ def conta_virtual_screen():
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin-bottom: 20px;  /* Espaço entre os cards */
         '>
             <div style='font-size: 40px;'>🔄</div>
             <div style='font-size: 18px; font-weight: bold;'>Transferências</div>
@@ -85,6 +88,7 @@ def conta_virtual_screen():
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin-bottom: 20px;  /* Espaço entre os cards */
         '>
             <div style='font-size: 40px;'>💳</div>
             <div style='font-size: 18px; font-weight: bold;'>Cartões</div>

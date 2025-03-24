@@ -1,21 +1,27 @@
 import streamlit as st
-import subprocess
-import os
 
-def main():
-    st.title("Tela Principal")
-    
-    st.write("Clique no botão abaixo para abrir a tela da Conta Virtual:")
-    
-    # Botão para abrir a conta_virtual.py
-    if st.button("Abrir Conta Virtual"):
-        # Verifica se o arquivo existe
-        if os.path.exists("conta_virtual.py"):
-            # Abre o arquivo conta_virtual.py usando o comando streamlit run
-            subprocess.Popen(["streamlit", "run", "conta_virtual.py"])
-            st.success("Tela da Conta Virtual aberta com sucesso!")
-        else:
-            st.error("Arquivo conta_virtual.py não encontrado!")
+# Configuração inicial
+st.set_page_config(page_title="App Principal", layout="wide")
 
-if __name__ == "__main__":
-    main()
+# Tela principal
+def main_screen():
+    st.title("🏠 Tela Principal")
+    st.write("Clique no botão abaixo para acessar sua conta virtual:")
+    
+    if st.button("Acessar Conta Virtual", type="primary"):
+        # Ativa a flag para mostrar a tela da conta virtual
+        st.session_state.show_conta_virtual = True
+        st.rerun()
+
+# Verifica qual tela mostrar
+if not st.session_state.get('show_conta_virtual', False):
+    main_screen()
+else:
+    # Importa e mostra a tela da conta virtual
+    from conta_virtual import conta_virtual_screen
+    conta_virtual_screen()
+    
+    # Botão para voltar
+    if st.button("Voltar para Tela Principal"):
+        del st.session_state.show_conta_virtual
+        st.rerun()

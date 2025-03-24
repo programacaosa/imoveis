@@ -1,16 +1,20 @@
-# Tela de login
-if 'page' not in st.session_state:
-    st.session_state.page = "login"
+# login.py
+import streamlit as st
 
-# Se a página for login
-if st.session_state.page == "login":
+def login():
     st.title("Tela de Login")
-    usuario = st.text_input("Usuário")
-    senha = st.text_input("Senha", type="password")
+
+    username = st.text_input("Usuário")
+    password = st.text_input("Senha", type="password")
 
     if st.button("Entrar"):
-        if usuario == "admin" and senha == "admin":  # Exemplo de validação simples
-            st.session_state.page = "conta_virtual"  # Após login, redireciona para a tela de conta virtual
-            st.experimental_rerun()  # Atualiza a página para mostrar a tela de conta virtual
+        if username == "admin" and password == "senha123":  # Validar login
+            st.session_state.logged_in = True  # Alterar estado de login
+            st.session_state.username = username
+            st.success("Login realizado com sucesso!")
+            st.experimental_rerun()  # Atualiza para abrir a tela de depósito
         else:
-            st.error("Usuário ou senha incorretos!")
+            st.error("Usuário ou senha incorretos.")
+
+if not st.session_state.get("logged_in", False):
+    login()  # Chama a função de login

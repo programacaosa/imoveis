@@ -19,7 +19,11 @@ def get_base64_logo():
     img.save(buffered, format="PNG")
     return base64.b64encode(buffered.getvalue()).decode()
 
-# Função para redirecionar para login
+# Função para redirecionar para a tela de cadastro
+def redirecionar_cadastro():
+    st.session_state.page = "cadastro"
+
+# Função para redirecionar para a tela de login
 def redirecionar_login():
     st.session_state.page = "login"
 
@@ -89,6 +93,10 @@ elif st.session_state.page == "login":
     st.title("Tela de Login")
     usuario = st.text_input("Usuário")
     senha = st.text_input("Senha", type="password")
+
+    # Botão de Voltar
+    if st.button("Voltar ao Cadastro"):
+        redirecionar_cadastro()
 
     if st.button("Entrar"):
         if usuario == "admin" and senha == "admin":  # Exemplo de validação simples

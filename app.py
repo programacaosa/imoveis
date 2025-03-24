@@ -1,7 +1,38 @@
 import streamlit as st
 
-# Configuração inicial (ÚNICO lugar onde isso deve aparecer)
+# Configuração inicial
 st.set_page_config(page_title="App Principal", layout="wide")
+
+# Adiciona CSS para imagem de fundo
+def set_background_image():
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            background-image: url("https://i.pinimg.com/736x/1a/5e/c1/1a5ec1cf17c0d4fa4c603fff08b4cbf8.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        /* Opcional: adiciona overlay para melhor legibilidade do texto */
+        .stApp:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.3);
+            z-index: -1;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# Chama a função para definir o background
+set_background_image()
 
 # Tela principal
 def main_screen():
@@ -10,7 +41,7 @@ def main_screen():
     with col2:
         st.image("logo.png", width=200)
     
-    st.title("🏠 CADASTRO")
+    st.title("📝 CADASTRO")
     st.write("Clique no botão abaixo para acessar sua conta virtual:")
     
     if st.button("Acessar Conta Virtual", type="primary"):

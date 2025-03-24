@@ -13,7 +13,7 @@ st.set_page_config(
 # Logo em base64 (substitua pela sua logo)
 def get_base64_logo():
     # Carregar a logo do arquivo
-    img_path = "logo.jpg"  # Caminho da logo na raiz do projeto
+    img_path = "logo.png"  # Caminho da logo na raiz do projeto
     img = Image.open(img_path)
     
     buffered = BytesIO()

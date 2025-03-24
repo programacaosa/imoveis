@@ -49,7 +49,7 @@ def conta_virtual_screen():
             margin-bottom: 20px;
         '>
             <div style='font-size: 40px;'>📈</div>
-            <div style='font-size: 18px; font-weight: bold;'>Investimentos</div>
+            <div style='font-size: 18px; font-weight: bold;'>Metas atingidas valores</div>
             <div style='font-size: 22px; margin-top: 10px;'>R$ 12.745,00</div>
         </div>
         """, unsafe_allow_html=True)
@@ -71,7 +71,7 @@ def conta_virtual_screen():
             margin-bottom: 20px;
         '>
             <div style='font-size: 40px;'>🔄</div>
-            <div style='font-size: 18px; font-weight: bold;'>Transferências</div>
+            <div style='font-size: 18px; font-weight: bold;'>Transferências pix</div>
             <div style='font-size: 22px; margin-top: 10px;'>R$ 1.200,00</div>
         </div>
         """, unsafe_allow_html=True)

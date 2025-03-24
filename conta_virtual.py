@@ -110,10 +110,6 @@ def conta_virtual_screen():
     ax.set_title("Investimentos Mensais")
     ax.set_xlabel("Mês")
     ax.set_ylabel("Valor (R$)")
-
-    # Tornando o fundo do gráfico transparente
-    fig.patch.set_facecolor('none')  # Fundo da figura transparente
-    ax.set_facecolor('none')  # Fundo do eixo transparente
     st.pyplot(fig)
 
     # Gráfico de Saldo de Conta (dados fictícios)
@@ -124,10 +120,6 @@ def conta_virtual_screen():
     ax2.set_title("Saldo Mensal")
     ax2.set_xlabel("Mês")
     ax2.set_ylabel("Valor (R$)")
-
-    # Tornando o fundo do gráfico transparente
-    fig2.patch.set_facecolor('none')
-    ax2.set_facecolor('none')
     st.pyplot(fig2)
 
     # Gráfico de Transferências realizadas (dados fictícios)
@@ -138,12 +130,9 @@ def conta_virtual_screen():
     ax3.set_title("Transferências por Mês")
     ax3.set_xlabel("Mês")
     ax3.set_ylabel("Valor (R$)")
-
-    # Tornando o fundo do gráfico transparente
-    fig3.patch.set_facecolor('none')
-    ax3.set_facecolor('none')
     st.pyplot(fig3)
 
     # Conteúdo adicional (opcional)
     st.markdown("---")
     st.write("Mais informações da conta...")
+

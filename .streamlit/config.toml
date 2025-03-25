@@ -2,7 +2,7 @@
 primaryColor = "#ffffff"
 backgroundColor = "#000000"  # Cor de fundo da página principal
 secondaryBackgroundColor = "#333333"  # Cor de fundo para containers e o menu lateral
-textColor = "#ffffff"  # Cor do texto
+textColor = "green"  # Cor do texto
 font = "sans serif"
 
 [sidebar]

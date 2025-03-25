@@ -6,4 +6,4 @@ textColor = "#ffffff"  # Cor do texto
 font = "sans serif"
 
 [sidebar]
-backgroundColor = "#000000"  # Cor de fundo do menu lateral (barra lateral)
+backgroundColor = "black"  # Cor de fundo do menu lateral (barra lateral)

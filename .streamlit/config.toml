@@ -1,8 +1,8 @@
 [theme]
 primaryColor = "#ffffff"
 backgroundColor = "#000000"  # Cor de fundo da página principal
-secondaryBackgroundColor = "#333333"  # Cor de fundo para containers e o menu lateral
-textColor = "green"  # Cor do texto
+secondaryBackgroundColor = "black"  # Cor de fundo para containers e o menu lateral
+textColor = "orange"  # Cor do texto
 font = "sans serif"
 
 [sidebar]

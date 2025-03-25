@@ -113,7 +113,7 @@ def dashboard():
 
 # Função principal
 def main():
-    st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/a/a7/Streamlit_logo.svg", width=200)
+    st.sidebar.image("https://static.vecteezy.com/ti/vetor-gratis/p1/8124777-logo-logo-casa-logotipo-casa-logo-simbolo-sinal-gratis-vetor.jpg", width=200)
     st.sidebar.title("Menu")
     
     # Verificar se o usuário está logado

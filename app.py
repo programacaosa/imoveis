@@ -41,6 +41,40 @@ def login_screen():
         else:
             st.error("Por favor, insira email e senha.")
 
+# Função para o cadastro de usuário
+def cadastro_screen():
+    st.title("Cadastro")
+    
+    # Campos de cadastro
+    nome = st.text_input("Nome")
+    email = st.text_input("Email")
+    telefone = st.text_input("Telefone")
+    senha = st.text_input("Senha", type="password")
+    
+    if st.button("Cadastrar"):
+        if nome and email and telefone and senha:
+            user_id = email.replace("@", "_at_").replace(".", "_dot_")
+            user_folder = os.path.join(os.path.abspath(os.path.dirname(__file__)), "cadastro", user_id)
+            
+            # Cria a pasta do usuário
+            os.makedirs(user_folder, exist_ok=True)
+            
+            # Dados do usuário
+            user_data = {
+                "Nome": nome,
+                "Email": email,
+                "Telefone": telefone,
+                "Senha": senha
+            }
+            
+            # Salva os dados do usuário em um arquivo JSON
+            with open(os.path.join(user_folder, "dados.json"), "w") as f:
+                json.dump(user_data, f)
+            
+            st.success(f"Cadastro realizado com sucesso! Bem-vindo, {nome}")
+        else:
+            st.error("Por favor, preencha todos os campos.")
+
 # Função para a tela do Dashboard
 def dashboard():
     st.title("Dashboard")
@@ -55,11 +89,19 @@ def dashboard():
 
 # Função principal para alternar entre as telas
 def main():
-    # Verificar se o usuário está logado
-    if "logged_in" not in st.session_state or not st.session_state["logged_in"]:
-        login_screen()  # Se não estiver logado, mostrar a tela de login
+    st.sidebar.title("Menu")
+    menu = st.sidebar.radio("Escolha uma opção", ["Login", "Cadastro", "Dashboard"])
+    
+    if menu == "Login":
+        login_screen()  # Se escolher Login, mostrar a tela de login
+    elif menu == "Cadastro":
+        cadastro_screen()  # Se escolher Cadastro, mostrar a tela de cadastro
     else:
-        dashboard()  # Se estiver logado, mostrar o Dashboard
+        # Verificar se o usuário está logado
+        if "logged_in" not in st.session_state or not st.session_state["logged_in"]:
+            st.warning("Você precisa fazer login para acessar o Dashboard.")
+        else:
+            dashboard()  # Se estiver logado, mostrar o Dashboard
 
 if __name__ == "__main__":
     main()
